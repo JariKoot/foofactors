@@ -15,3 +15,5 @@ factor(c(as.character(a), as.character(b)))
 fbind(a, b)
 
 exists("fbind", where = globalenv(), inherits = FALSE)
+
+check()
