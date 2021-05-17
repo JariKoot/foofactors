@@ -1,6 +1,9 @@
 library(devtools)
 library(tidyverse)
 library(fs)
+library(foofactors) #maakt je aangemaakte functies (die aanwezig zijn in NAMESPACE) beschikbaar voor iedereen
+library(roxygen2)
+library(testthat)
 
 (a <- factor(c("character", "hits", "your", "eyeballs")))
 #> [1] character hits      your      eyeballs
@@ -17,3 +20,25 @@ fbind(a, b)
 exists("fbind", where = globalenv(), inherits = FALSE)
 
 check()
+use_mit_license()
+
+document()
+?fbind
+
+install()
+
+test()
+
+library(foofactors)
+
+a <- factor(c("character", "hits", "your", "eyeballs"))
+b <- factor(c("but", "integer", "where it", "counts"))
+
+fbind(a, b)
+use_testthat()
+use_test("fbind")
+
+use_package("forcats")
+use_r("fcount.R")
+
+load_all()
